@@ -1,3 +1,5 @@
+create schema sales;
+
 create table sales.employee(
    id int generated always as identity,
    name varchar(100) not null,
