@@ -16,4 +16,6 @@ public interface EmployeeService {
 	
 	public Employee findById(Integer key);
 	
+	public List<Employee> findByidDepartment(Integer idDepartment);
+	
 }

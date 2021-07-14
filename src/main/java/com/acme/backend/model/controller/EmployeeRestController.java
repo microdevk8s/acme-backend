@@ -29,13 +29,22 @@ public class EmployeeRestController {
 		return employeeService.findAll();
 	}
 	
+	@GetMapping("/employee/{id}")
+	public Employee buscar(@PathVariable Integer id) {
+		return employeeService.findById(id);
+	}
+	
+	@GetMapping("/employees/{idDepartment}")
+	public List<Employee> findByDepartment(@PathVariable Integer idDepartment) {
+		return employeeService.findByidDepartment(idDepartment);
+	}
+	
 	@PostMapping("/employee")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Employee guardar(@RequestBody Employee employee) {
 		return employeeService.save(employee);
 	}
 	
-	//Ejercicio: Imolementar los metodos actualizar y eliminar
 	@DeleteMapping("/employee/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void eliminar(@PathVariable Integer id) {

@@ -51,6 +51,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeDao.findById(key).orElse(null);
 	}
 
+	@Override
+	@Transactional(readOnly = true)
+	public List<Employee> findByidDepartment(Integer idDepartment) {
+		return employeeDao.findByidDepartment(idDepartment);
+	}
+
 	
 	
 }

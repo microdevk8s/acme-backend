@@ -2,6 +2,7 @@ package com.acme.backend.model.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +21,8 @@ public class Employee implements Serializable {
 	private String name;
 	private String email;
     private String address;
+    @Column(name = "id_department")
+    private Integer idDepartment;
     
 	public Integer getId() {
 		return id;
@@ -44,6 +47,12 @@ public class Employee implements Serializable {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public Integer getIdDepartment() {
+		return idDepartment;
+	}
+	public void setIdDepartment(Integer idDepartment) {
+		this.idDepartment = idDepartment;
 	}
 	
     
